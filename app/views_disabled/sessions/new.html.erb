@@ -1,0 +1,15 @@
+<%= form_for @user, url: login_path, method: :post do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit "log in" %>
+    <br>
+    <br>
+    Or Manual <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
+    <br>
+    or <%= link_to('Login/Sign up with GitHub!', '/auth/github', method: :post) %>
+    <br>
+    Back to <%= link_to('Home', '/', method: :get) %>
+  <% end %>
+   

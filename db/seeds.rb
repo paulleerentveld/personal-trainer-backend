@@ -23,7 +23,7 @@
 # User.create!(usertype: "trainer", firstname: "Kim", lastname: "Trainer", email: "test@veldnet.com.au", mobile: "0412345678", height: "160", weight: "60", sex: "Female", dob: "2000-01-01", authlinked: true)
 # User.create!(usertype: "client", firstname: "Col", lastname: "Client", email: "col@gmail.com", mobile: "0412345679", height: "180", weight: "90", sex: "Male", dob: "2000-01-01", authlinked: false)
 # User.create!(usertype: "client", firstname: "Tim", lastname: "Client", email: "tim@gmail.com", mobile: "0412345674", height: "170", weight: "80", sex: "Male", dob: "2000-01-01", authlinked: false)
-# User.create!(usertype: "client", firstname: "Ben", lastname: "Client", email: "ben@gmail.com", mobile: "0412345677", height: "190", weight: "100", sex: "Male", dob: "2000-01-01", authlinked: false)
+User.create!(usertype: "client", firstname: "Ben", lastname: "Client", email: "ben@gmail.com", mobile: "0412345677", height: "190", weight: "100", sex: "Male", dob: "2000-01-01", authlinked: false)
 
 ClientWorkout.create!(user_id: "2", workout_id: "1", startdate:"2022-11-23" , enddate:"2022-11-23" , completed: false)
 

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :instructors
   resources :workouts
   resources :exercises
   resources :users

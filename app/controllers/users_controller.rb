@@ -3,19 +3,18 @@ class UsersController < ApplicationController
     end
 
     def index
-      
       if params[:email]
         @users = User.find_by(email: params[:email])
       else
         @users = User.all
       end
-      render json: @users
+      render json: @users, methods: [:avatar_url, :fullname]
       
     end
 
     def clients
       @clients = User.clients
-      render :json => @clients, methods: :avatar_url
+      render :json => @clients, methods: [:avatar_url, :fullname]
       #render :json => @workouts, methods: :exercise_ids, include: {exercises: {}}
       #render json: UserSerializer.new(@clients).serializable_hash
     end

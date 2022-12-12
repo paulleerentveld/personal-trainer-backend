@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :exercises
   resources :users
   resources :clientworkouts
+  resources :exerciseworkouts
 
   get '/clients' => 'users#clients'
   get '/clients/:id' => 'users#show'

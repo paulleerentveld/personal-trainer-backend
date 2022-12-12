@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_23_072812) do
+ActiveRecord::Schema.define(version: 2022_12_07_054735) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 2022_11_23_072812) do
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["instructor_id"], name: "index_clients_on_instructor_id"
     t.index ["mobile"], name: "index_clients_on_mobile", unique: true
+  end
+
+  create_table "exercise_sets", force: :cascade do |t|
+    t.integer "weight"
+    t.integer "reps"
+    t.integer "exercise_workout_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exercise_workout_id"], name: "index_exercise_sets_on_exercise_workout_id"
   end
 
   create_table "exercise_workouts", force: :cascade do |t|
@@ -130,6 +139,7 @@ ActiveRecord::Schema.define(version: 2022_11_23_072812) do
   add_foreign_key "client_workouts", "users"
   add_foreign_key "client_workouts", "workouts"
   add_foreign_key "clients", "instructors"
+  add_foreign_key "exercise_sets", "exercise_workouts"
   add_foreign_key "exercise_workouts", "exercises"
   add_foreign_key "exercise_workouts", "workouts"
 end

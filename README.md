@@ -12,6 +12,7 @@ This is my phase 5 project App. The app allows a Personal Trainer to setup their
 ## Install Steps
 - Download and run bundle install
 - Make local server run on port 3001 or change ENV file on front-end to point to your local server address
+- add first trainer account to seeds file??
 - rails s
 
 

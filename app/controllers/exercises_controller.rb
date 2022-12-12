@@ -25,14 +25,14 @@ class ExercisesController < ApplicationController
     def create
         @exercise = Exercise.new(exercise_params)
         @exercise.save
-        render json: @exercise
+        render json: @exercise, methods: [:imageupload_url, :videoupload_url]
     end
 
 
     def update
         @exercise = Exercise.find(params[:id])
         @exercise.update(exercise_params)
-        render json: @exercise
+        render json: @exercise, methods: [:imageupload_url, :videoupload_url]
     end
 
     def destroy
@@ -44,7 +44,7 @@ class ExercisesController < ApplicationController
     private
 
     def exercise_params
-        params.require(:exercise).permit(:exercise, :id, :name, :description, :image, :video, :category, :bodypart, :imageupload, :videoupload)
+        params.permit(:exercise, :id, :name, :description, :image, :video, :category, :bodypart, :imageupload, :videoupload)
     end
 
 

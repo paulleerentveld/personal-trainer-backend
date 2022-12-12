@@ -15,7 +15,7 @@ class Exercise < ApplicationRecord
       end
 
     def videoupload_url
-    Rails.application.routes.url_helpers.url_for(videoupload) if videoupload.attached?
+      Rails.application.routes.url_helpers.url_for(videoupload) if videoupload.attached?
     end
 
 

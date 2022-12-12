@@ -43,13 +43,15 @@ class UsersController < ApplicationController
       @user = User.create(user_params)
       @user.usertype = "client"
       @user.save
-      render json: @user
+      #render json: @user
+      render json: UserSerializer.new(@user).serializable_hash[:data][:attributes]
     end
 
     def update
       @user = User.find(params[:id])
       @user.update(user_params)
-      render json: @user
+      #render json: @user
+      render json: UserSerializer.new(@user).serializable_hash[:data][:attributes]
     end
 
     def destroy
@@ -60,6 +62,6 @@ class UsersController < ApplicationController
     private
   
     def user_params
-      params.require(:user).permit(:user, :firstname, :lastname, :email, :usertype, :mobile, :height, :weight, :sex, :dob, :authlinked, :notes, :image, :avatar, :avatar_url)
+      params.permit(:user, :id, :firstname, :lastname, :email, :usertype, :mobile, :height, :weight, :sex, :dob, :authlinked, :notes, :image, :avatar, :avatar_url)
     end
   end

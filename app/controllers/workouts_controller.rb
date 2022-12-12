@@ -5,6 +5,7 @@ class WorkoutsController < ApplicationController
     def index
         #@workouts = Workout.all.to_json(include: :exercises)
         @workouts = Workout.includes(:exercises).all
+        #render :json => @workouts, methods: :exercise_ids, include: {exercises: {methods: [:videoupload_url, :imageupload_url]}}
         render :json => @workouts, methods: :exercise_ids, include: {exercises: {methods: [:videoupload_url, :imageupload_url]}}
     end
 

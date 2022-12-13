@@ -7,4 +7,11 @@ class ExerciseworkoutsController < ApplicationController
     end
 
 
+    def destroy
+        @exerciseworkouts = ExerciseWorkout.find(params[:id])
+        @exerciseworkouts.destroy
+        render json: { deleted: true }, status: :no_content
+    end
+
+
 end

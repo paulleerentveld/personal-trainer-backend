@@ -1,9 +1,9 @@
 class Exercise < ApplicationRecord
-    has_many :exercise_workouts
-    has_many :workouts, through: :exercise_workouts
+    has_many :exercise_workouts, dependent: :destroy
+    has_many :workouts, through: :exercise_workouts, dependent: :destroy
 
-    has_one_attached :imageupload
-    has_one_attached :videoupload
+    has_one_attached :imageupload, dependent: :purge_later
+    has_one_attached :videoupload, dependent: :purge_later
 
     validates :name, presence: true
     validates :description, presence: true

@@ -38,6 +38,7 @@ class ClientworkoutsController < ApplicationController
     def destroy
         @clientworkout = ClientWorkout.find(params[:id])
         @clientworkout.destroy
+        render json: { deleted: true }, status: :no_content
     end
     
 

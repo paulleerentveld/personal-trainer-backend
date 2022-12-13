@@ -56,7 +56,10 @@ class UsersController < ApplicationController
 
     def destroy
         @user = User.find(params[:id])
+        #@user.avatar.purge
+        #@user.workouts.clear
         @user.destroy
+        render json: { deleted: true }, status: :no_content
     end
   
     private

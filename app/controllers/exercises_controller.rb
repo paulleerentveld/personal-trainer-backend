@@ -39,7 +39,7 @@ class ExercisesController < ApplicationController
         @exercise = Exercise.find(params[:id])
         @exercise.workouts.clear
         @exercise.destroy
-        render json: { deleted: true }, status: :no_content
+        render json: { deleted: true }
     end
     
 

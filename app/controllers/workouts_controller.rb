@@ -46,7 +46,7 @@ class WorkoutsController < ApplicationController
     def destroy
         @workout = Workout.find(params[:id])
         @workout.destroy
-        render json: { deleted: true }, status: :no_content
+        render json: { deleted: true }
     end
     
 

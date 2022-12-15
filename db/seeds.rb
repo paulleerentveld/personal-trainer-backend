@@ -30,8 +30,9 @@
 
 # ExerciseSet.create!(weight: "100", reps: "12", exercise_workouts_id: "1")
 
-User.create!(usertype: "trainer", firstname: "Kim", lastname: "Trainer", email: "test@veldnet.com.au", mobile: "0412345678", height: "160", weight: "60", sex: "Female", dob: "2000-01-01", authlinked: true)
-#User.create!(usertype: "trainer", firstname: "", lastname: "", email: "", mobile: "", height: "100", weight: "100", sex: "Male", dob: "2000-01-01", authlinked: true)
+#User.create!(usertype: "trainer", firstname: "Kim", lastname: "Trainer", email: "test@veldnet.com.au", mobile: "0412345678", height: "160", weight: "60", sex: "Female", dob: "2000-01-01", authlinked: true)
+
+User.create!(usertype: "trainer", firstname: "", lastname: "", email: "", mobile: "", height: "100", weight: "100", sex: "Male", dob: "2000-01-01", authlinked: true)
 
 
 

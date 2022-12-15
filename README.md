@@ -1,8 +1,6 @@
 ## Personal Trainer App - Backend Rails
 This is my phase 5 project App. The app allows a Personal Trainer to setup their clients, create exercises and upload photos/videos, generate workout templates and schedule workouts and link to clients and workout templates. 
 
-## Limitations
-- Add clients and exercises you cannot upload images/vidoes on new record creation. There needs to be a record to attach to. This needs more work to allow file upload on form submission.  
 
 ## Dependancies
 - Db is sqlite3
@@ -12,7 +10,7 @@ This is my phase 5 project App. The app allows a Personal Trainer to setup their
 ## Install Steps
 - Download and run bundle install
 - Make local server run on port 3001 or change ENV file on front-end to point to your local server address
-- add first trainer account to seeds file??
+- Edit last line in Seeds file and add the first trainer user. Add your name, email etc then run rails db migrate and seed
 - rails s
 
 

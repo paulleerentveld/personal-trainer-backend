@@ -17,7 +17,8 @@ class WorkoutsController < ApplicationController
     def show
         #@workout = Workout.find(params[:id]).to_json(include: :exercises)
         @workout = Workout.includes(:exercises).find(params[:id])
-        render :json => @workout, include: {exercises: {only: :name}}
+        render :json => @workout, include: {exercises: {methods: [:videoupload_url, :imageupload_url]}}
+        #render :json => @workout, include: :exercises
         #render :json => Movie.all, only: [:title, :date_released, :score], include: {studios: {only: :name}, characters: {only: :name}}
     end
 
@@ -28,19 +29,19 @@ class WorkoutsController < ApplicationController
 
     def edit
         @workout = Workout.includes(:exercises).find(params[:id])
-        render json: @workout
+        render json: @workout, include: :exercises
     end
 
     def create
         @workout = Workout.includes(:exercises).new(workout_params)
         @workout.save
-        render json: @workout
+        render json: @workout, include: :exercises
     end
 
     def update
         @workout = Workout.includes(:exercises).find(params[:id])
         @workout.update(workout_params)
-        render json: @workout
+        render json: @workout, include: :exercises
     end
 
     def destroy
@@ -54,7 +55,7 @@ class WorkoutsController < ApplicationController
 
     def workout_params
         #params.require(:workout).permit(:name, :workouttype, :search, :client_id, exercise_ids: [:id, :name])
-        params.permit(:id, :workout, :name, :workouttype, :search, :client_id, :exercise_ids => [])
+        params.permit(:id, :workout, :name, :workouttype, :search, :client_id, exercise_ids: [])
         
         #params.fetch(:workout, {}).permit(:id, :name, :workouttype, :search, :client_id, :exercise_ids => [])
         

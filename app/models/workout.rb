@@ -15,9 +15,4 @@ class Workout < ApplicationRecord
     scope :type, ->(input = ["Aerobic", "Strength", "Mobility", "BodyBuilding"]) {where("workouttype IN (?)", input)}
 
 
-    # def self.exercise_ids
-    #     Exercise.all
-    # end
-
-
 end

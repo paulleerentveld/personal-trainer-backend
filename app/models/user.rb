@@ -3,6 +3,13 @@ class User < ActiveRecord::Base
   has_many :workouts, through: :client_workouts
 
   has_one_attached :avatar, dependent: :purge_later
+
+  validates :firstname, presence: true
+  validates :lastname, presence: true
+  validates :email, presence: true
+  validates :mobile, presence: true
+  validates :sex, presence: true
+  validates :dob, presence: true
   
   
   scope :clients, -> { where(usertype: "client") }

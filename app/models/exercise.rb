@@ -7,6 +7,8 @@ class Exercise < ApplicationRecord
 
     validates :name, presence: true
     validates :description, presence: true
+    validates :category, presence: true
+    validates :bodypart, presence: true
     #validates :description, length: {minimum:20}
 
 
